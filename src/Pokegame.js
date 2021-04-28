@@ -15,16 +15,18 @@ const Pokegame = (props) => {
 	console.log(hand1);
 	console.log(hand2);
 	console.log(hand1Total);
+	console.log(hand2Total);
 
 	return (
 		<div className="Pokegame">
+			<h1 className="Pokegame-header">Pokedex</h1>
 			<div>
 				<h3>Player 1</h3>
-				<Pokedex pokemon={hand1} />
+				<Pokedex pokemon={hand1} expTotal={hand1Total} isWinner={hand1Total > hand2Total} />
 			</div>
 			<div>
 				<h3>Player 2</h3>
-				<Pokedex pokemon={hand2} />
+				<Pokedex pokemon={hand2} expTotal={hand2Total} isWinner={hand2Total > hand1Total} />
 			</div>
 		</div>
 	);
